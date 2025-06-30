@@ -147,6 +147,8 @@ function runner.chain_commands(task_name, commands, module_config, addition_args
 
     local quickfix_output = not command.ignore_stdout or not command.ignore_stderr
 
+    vim.notify(vim.inspect(command))
+
     local job = Job:new({
         command = command.cmd,
         args = args,
